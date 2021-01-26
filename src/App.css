@@ -1,0 +1,88 @@
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.app {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.app__backgroundImage {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.225;
+}
+
+.app__backgroundColor {
+  background-color: black;
+  color: black;
+  position: absolute;
+  z-index: -2;
+  height: 100vh;
+  width: 100vw;
+}
+
+.app__videos {
+  position: relative;
+  height: 800px;
+  border-radius: 20px;
+  overflow: scroll;
+  width: 80%;
+  max-width: 500px;
+  scroll-snap-type: y mandatory;
+}
+
+
+.app__videos::-webkit-scrollbar {
+  display: none;
+}
+
+.app__videos {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.app__copywrite {
+  position: absolute;
+  z-index: 1;
+  right: 8px;
+  bottom: 4px;
+  font-size: 2.2vh;
+  color: #3f51b5;
+  display: flex;
+}
+
+.app__favoriteIcon {
+  color: red;
+}
+
+.app__signInButton {
+  position: absolute;
+  /* display: flex; */
+  z-index: 1;
+  top: 65px;
+  right: 55px;
+}
+
+.app__signedUser {
+  display: flex;
+}
+
+.app__signup {
+  width: inherit;
+}
+
+.app__signInFeilds {
+  width: inherit;
+  margin-bottom: 10px;
+}
+
+.app__fileInputButton {
+  width: inherit;
+}
+
+.app__fileInput {
+  display: none;
+}
