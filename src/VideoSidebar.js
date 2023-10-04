@@ -1,20 +1,24 @@
-import { Avatar, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, List, ListItem, ListItemAvatar, ListItemText, makeStyles, Popover, Slide, TextField, Tooltip, Zoom } from '@material-ui/core';
-import { Favorite, FavoriteBorder, HighlightOff, Message, SendRounded, Share } from '@material-ui/icons'
 import React, { useEffect, useState } from 'react'
-import { db } from './firebase'
+import { Avatar, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, List, ListItem, ListItemAvatar, ListItemText, makeStyles, Popover, Slide, TextField, Tooltip, Zoom } from '@material-ui/core';
+import { Delete, Favorite, FavoriteBorder, HighlightOff, Message, SendRounded, Share } from '@material-ui/icons'
 import firebase from 'firebase'
-import './VideoSidebar.css'
 import { FacebookIcon, FacebookShareButton, TelegramIcon, TelegramShareButton, ViberIcon, ViberShareButton, WhatsappIcon, WhatsappShareButton } from 'react-share';
+import { Menu, MenuItem } from '@material-ui/core';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+
+import { db } from './firebase'
+import './VideoSidebar.css'
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-function VideoSidebar({ likes, messages, shares, videoId, userUid, userName, videoUrl }) {
+function VideoSidebar({ likes, messages, videoId, userUid, userName, videoUrl, channel }) {
   const [liked, setLiked] = useState(false)
   const [openMessages, setOpenMessages] = React.useState(false);
   const [userMessage, setUserMessage] = React.useState('')
   const [shareMenuOpen, setShareMenuOpen] = React.useState(false)
+  const [anchorEl, setAnchorEl] = useState(null);
   const shareButtonRef = React.useRef('')
 
   const useStyles = makeStyles((theme) => ({
@@ -28,20 +32,6 @@ function VideoSidebar({ likes, messages, shares, videoId, userUid, userName, vid
       display: 'inline',
     },
   }));
-
-  const classes = useStyles()
-
-  const handleClickOpenMessages = () => {
-    setOpenMessages(true);
-  };
-
-  const handleCloseMessages = () => {
-    setOpenMessages(false);
-  };
-
-  const handleUserMessageChange = (event) => {
-    setUserMessage(event.target.value);
-  };
 
   useEffect(() => {
     db.collection("videos")
@@ -59,6 +49,21 @@ function VideoSidebar({ likes, messages, shares, videoId, userUid, userName, vid
       })
 
   }, [videoId, userUid])
+
+  const classes = useStyles()
+
+  const handleClickOpenMessages = () => {
+    setOpenMessages(true);
+  };
+
+  const handleCloseMessages = () => {
+    setOpenMessages(false);
+  };
+
+  const handleUserMessageChange = (event) => {
+    setUserMessage(event.target.value);
+  };
+
 
   const onLikeVideo = () => {
     db.collection("videos")
@@ -110,8 +115,42 @@ function VideoSidebar({ likes, messages, shares, videoId, userUid, userName, vid
     setShareMenuOpen(false)
   }
 
+  const handleDeleteVideo = () => {
+    if(channel===userName) {
+      db.collection("videos").doc(videoId).delete()
+    } else {
+      alert('You can delete your videos onl1!')
+    }
+    handleClose()
+  }
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <div className="videoSidebar">
+      
+      <div className="videoSidebar__deleteOption">
+        <IconButton className="videoSidebar__IconButton" onClick={handleClick}>
+          <MoreVertIcon className="videoSidebar__deleteIcon" fontSize="small" />
+        </IconButton>
+      </div>
+
+      <Menu
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem disabled={channel!==userName}  onClick={handleDeleteVideo}><Delete /></MenuItem>
+      </Menu>
+
+
       <div className="videoSidebar__buttons">
         {liked ? (
           <Favorite fontSize="large" onClick={onDisLikeVideo} />
@@ -193,8 +232,8 @@ function VideoSidebar({ likes, messages, shares, videoId, userUid, userName, vid
         className="videoSidebar__messagesDialogBox"
         maxWidth="sm"
       >
-        <DialogTitle id="alert-dialog-slide-title">Messages</DialogTitle>
-        <DialogContent>
+        <DialogTitle className="videoSidebar__userMessageBox" id="alert-dialog-slide-title">Messages</DialogTitle>
+        <DialogContent className="videoSidebar__userMessageBox">
           <List className={classes.root}>
             {messages.map(({ username, message }) => (
               <ListItem key={username + message} alignItems="flex-start">

@@ -12,3 +12,9 @@
   height: 100%;
   width: 100%;
 }
+
+.video__MoreVertIcon {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}

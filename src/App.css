@@ -3,34 +3,35 @@ html {
 }
 
 .app {
-  height: 100vh;
-  display: grid;
+  height     : 100vh;
+  display    : grid;
   place-items: center;
 }
+
 .app__backgroundImage {
   position: absolute;
-  z-index: -1;
-  height: 100vh;
-  width: 100vw;
-  opacity: 0.225;
+  z-index : -1;
+  height  : 100%;
+  width   : 100%;
+  opacity : 0.225;
 }
 
 .app__backgroundColor {
   background-color: black;
-  color: black;
-  position: absolute;
-  z-index: -2;
-  height: 100vh;
-  width: 100vw;
+  color           : black;
+  position        : absolute;
+  z-index         : -2;
+  height          : 100%;
+  width           : 100%;
 }
 
 .app__videos {
-  position: relative;
-  height: 800px;
-  border-radius: 20px;
-  overflow: scroll;
-  width: 80%;
-  max-width: 500px;
+  position        : relative;
+  height          : 90%;
+  border-radius   : 20px;
+  overflow        : scroll;
+  width           : 80%;
+  max-width       : 500px;
   scroll-snap-type: y mandatory;
 }
 
@@ -41,17 +42,17 @@ html {
 
 .app__videos {
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  scrollbar-width   : none;
 }
 
 .app__copywrite {
-  position: absolute;
-  z-index: 1;
-  right: 8px;
-  bottom: 4px;
+  position : absolute;
+  z-index  : 1;
+  right    : 8px;
+  bottom   : 4px;
   font-size: 2.2vh;
-  color: #3f51b5;
-  display: flex;
+  color    : #3f51b5;
+  display  : flex;
 }
 
 .app__favoriteIcon {
@@ -59,11 +60,11 @@ html {
 }
 
 .app__signInButton {
-  position: absolute;
+  position  : absolute;
   /* display: flex; */
-  z-index: 1;
-  top: 65px;
-  right: 55px;
+  z-index   : 1;
+  top       : 65px;
+  right     : 55px;
 }
 
 .app__signedUser {
@@ -75,7 +76,7 @@ html {
 }
 
 .app__signInFeilds {
-  width: inherit;
+  width        : inherit;
   margin-bottom: 10px;
 }
 
@@ -85,4 +86,15 @@ html {
 
 .app__fileInput {
   display: none;
+}
+
+.app__noUserDisplayCard {
+  min-width            : 275px;
+  height               : 100%;
+  background-image     : url(https://cdn3.iconfinder.com/data/icons/bold-blue-glyphs-free-samples/32/Info_Circle_Symbol_Information_Letter-512.png);
+  background-size      : contain;
+  background-repeat    : no-repeat;
+  background-position  : center;
+  place-items: center;
+  display: grid;
 }

@@ -1,6 +1,6 @@
 .videoSidebar {
   position: absolute;
-  top: 50%;
+  top: 2%;
   right: 10px;
   color: white;
 }
@@ -8,6 +8,24 @@
 .videoSidebar__buttons {
   padding: 20px;
   text-align: center;
+}
+
+.videoSidebar__deleteOption {
+  padding-bottom: 345px;
+  padding-left: 35px;
+  color: white;
+}
+
+.videoSidebar__deleteIcon {
+  color: white;
+}
+
+.videoSidebar__deleteIcon2:hover {
+  cursor: pointer !important;
+}
+
+.videoSidebar__IconButton {
+  color: white;
 }
 
 .TextField-without-border-radius fieldset {

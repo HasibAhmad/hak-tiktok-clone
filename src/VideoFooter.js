@@ -1,7 +1,8 @@
-import { MusicNote } from '@material-ui/icons'
 import React from 'react'
-import './VideoFooter.css'
+import { MusicNote } from '@material-ui/icons'
 import Ticker from 'react-ticker'
+
+import './VideoFooter.css'
 
 function VideoFooter({ channel, description, song}) {
   return (
