@@ -267,7 +267,7 @@ function VideoSidebar({ likes, messages, videoId, userUid, userName, videoUrl, c
               variant="outlined"
               color="primary"
               multiline
-              rowsMax={3}
+              maxRows={3}
               value={userMessage}
               onChange={handleUserMessageChange}
             />

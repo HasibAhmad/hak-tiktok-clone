@@ -1,23 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.9c066df5.chunk.css",
-    "main.js": "/static/js/main.7d99cb44.chunk.js",
-    "main.js.map": "/static/js/main.7d99cb44.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.cce0587c.js",
-    "runtime-main.js.map": "/static/js/runtime-main.cce0587c.js.map",
-    "static/js/2.47704494.chunk.js": "/static/js/2.47704494.chunk.js",
-    "static/js/2.47704494.chunk.js.map": "/static/js/2.47704494.chunk.js.map",
-    "static/js/3.b8221d3b.chunk.js": "/static/js/3.b8221d3b.chunk.js",
-    "static/js/3.b8221d3b.chunk.js.map": "/static/js/3.b8221d3b.chunk.js.map",
+    "main.css": "/static/css/main.a282e53d.chunk.css",
+    "main.js": "/static/js/main.be47f8b5.chunk.js",
+    "main.js.map": "/static/js/main.be47f8b5.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.e3b4ba9f.js",
+    "runtime~main.js.map": "/static/js/runtime~main.e3b4ba9f.js.map",
+    "static/js/2.d0e27fd1.chunk.js": "/static/js/2.d0e27fd1.chunk.js",
+    "static/js/2.d0e27fd1.chunk.js.map": "/static/js/2.d0e27fd1.chunk.js.map",
+    "static/js/3.ea1fbcba.chunk.js": "/static/js/3.ea1fbcba.chunk.js",
+    "static/js/3.ea1fbcba.chunk.js.map": "/static/js/3.ea1fbcba.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.9c066df5.chunk.css.map": "/static/css/main.9c066df5.chunk.css.map",
-    "static/js/2.47704494.chunk.js.LICENSE.txt": "/static/js/2.47704494.chunk.js.LICENSE.txt",
-    "static/media/tiktok.5757110b.jpg": "/static/media/tiktok.5757110b.jpg"
-  },
-  "entrypoints": [
-    "static/js/runtime-main.cce0587c.js",
-    "static/js/2.47704494.chunk.js",
-    "static/css/main.9c066df5.chunk.css",
-    "static/js/main.7d99cb44.chunk.js"
-  ]
+    "precache-manifest.d7302a6ceaac4d961bf94b66bea83f63.js": "/precache-manifest.d7302a6ceaac4d961bf94b66bea83f63.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.a282e53d.chunk.css.map": "/static/css/main.a282e53d.chunk.css.map",
+    "static/media/tiktok.jpg": "/static/media/tiktok.9cdcd053.jpg"
+  }
 }
